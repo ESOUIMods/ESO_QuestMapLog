@@ -1,7 +1,7 @@
 ## Title: Quest Map Collector |c555555v1.0|r
 ## Version: 1.0
 ## Author: |c70C0DECaptainBlagbird|r
-## APIVersion: 100011
+## APIVersion: 100012
 ## Description: Used to collect data for the AddOn "Quest Map"
 ## SavedVariables: Log
 
