@@ -7,7 +7,7 @@ https://github.com/CaptainBlagbird
 --]]
 
 -- Addon info
-AddonName = "QuestMapLog"
+local AddonName = "QuestMapLog"
 
 local function GetData()
 	-- Saved variables table
