@@ -1,7 +1,7 @@
 ## Title: Quest Map Log |c555555v1.1|r
 ## Version: 1.1
 ## Author: |c70C0DECaptainBlagbird|r
-## APIVersion: 100015
+## APIVersion: 100016
 ## Description: Tool to collect data that might help find bugs of the AddOn "Quest Map"
 ## SavedVariables: QM_Log
 
