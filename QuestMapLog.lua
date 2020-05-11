@@ -8,8 +8,18 @@ https://github.com/CaptainBlagbird
 
 -- Addon info
 local AddonName = "QuestMapLog"
+QuestMapLog = {}
+QuestMapLog.savedVars = {}
 
-local function GetData()
+QuestMapLog.data_default = {
+    data = {},
+}
+
+QuestMapLog.game_default = {
+    data = {},
+}
+
+function QuestMapLog:GetData()
     -- Saved variables table
     QM_Log = {}
     
@@ -24,14 +34,19 @@ local function GetData()
         QM_Log[id] = {}
         QM_Log[id].name, QM_Log[id].questType = GetCompletedQuestInfo(id)
         QM_Log[id].zoneName, QM_Log[id].objectiveName, QM_Log[id].zoneIndex, QM_Log[id].poiIndex = GetCompletedQuestLocationInfo(id)
+        QM_Log[id].lang = GetCVar("language.2")
     end
-    -- Reload ui so the saved variables file gets written
-    ReloadUI()
+    QuestMapLog.savedVars["log"].data = QM_Log
 end
 
 -- Event handler function for EVENT_PLAYER_ACTIVATED
 local function OnPlayerActivated(eventCode)
-    SLASH_COMMANDS["/qmlog"] = GetData
+    QuestMapLog.savedVars = {
+        ["settings"]    = ZO_SavedVars:NewAccountWide("QuestMapLog_SavedVariables", 1, "settings", QuestMapLog.game_default),
+        ["log"]         = ZO_SavedVars:New("QuestMapLog_SavedVariables", 1, "log", QuestMapLog.data_default),
+    }
+    QuestMapLog:GetData()
+    QuestMapLog.savedVars["settings"].data.lang = GetCVar("language.2")
     
     EVENT_MANAGER:UnregisterForEvent(AddonName, EVENT_PLAYER_ACTIVATED)
 end

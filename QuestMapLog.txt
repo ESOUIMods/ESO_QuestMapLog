@@ -1,13 +1,12 @@
-## Title: Quest Map Log |c555555v1.1|r
-## Version: 1.1
-## Author: |c70C0DECaptainBlagbird|r
-## APIVersion: 100026
+## Title: Quest Map Log v1.3
+## Version: 1.3
+## AddOnVersion: 13
+## Author: CaptainBlagbird, Sharlikran
+## APIVersion: 100030 100031
 ## Description: Tool to collect data that might help find bugs of the AddOn "Quest Map"
-## SavedVariables: QM_Log
+## SavedVariables: QuestMapLog_SavedVariables
 
 QuestMapLog.lua
-
-
 
 ; This Add-on is not created by, affiliated with or sponsored by ZeniMax
 ; Media Inc. or its affiliates. The Elder Scrolls® and related logos are
